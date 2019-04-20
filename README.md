@@ -24,7 +24,13 @@ open index.html
 
 ## Technologies and labs:
 ```
-Node.js, MongoDB, Mongoose, JQuery, Bootstrap, Expressjs, Cors
+Node.js
+MongoDB
+Mongoose
+JQuery
+Bootstrap
+Expressjs
+Cors
 ```
 
 ## Concepts:
