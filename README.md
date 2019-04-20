@@ -1,14 +1,15 @@
+# Full-Stack web development
 I am not allowed to publish the purpose of this project,
 but it's in general a mini full-stack web development project.
 
-These are the topics that this project includes:
+# These are the topics that this project includes:
 
-Technologies and labs:
+## Technologies and labs:
 ```
 Node.js, MongoDB, Mongoose, JQuery, Bootstrap, Expressjs, Cors
 ```
 
-Concepts:
+## Concepts:
 ```
 Same Origin Policy (SOP)
 Cross Origin Resource Sharing (CORS)
@@ -19,7 +20,7 @@ Wireshark, packet inspection
 Non-relational databases
 ```
 
-Related Topics:
+## Related Topics:
 ```
 Microservices
 Docker
@@ -31,6 +32,7 @@ chi
 source-control
 ```
 
+## Build from scratch
 I supplied the mode modules, so it's not necessary to run the commands (just open index.html).
 I provided the commands if you want to build from scratch:
 ```
