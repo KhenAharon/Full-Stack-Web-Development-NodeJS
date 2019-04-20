@@ -32,9 +32,14 @@ chi
 source-control
 ```
 
-## Build from scratch
-I supplied the node modules, so it's not necessary to run the commands (just open index.html).
-I provided the commands if you want to build from scratch:
+## Run
+I supplied the node modules, so it's not necessary to run the commands. just run:
+```
+node app.js
+```
+and open index.html
+
+## Build from scratch:
 ```
 npm install express
 npm install cors
