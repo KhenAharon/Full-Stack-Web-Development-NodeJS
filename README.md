@@ -3,7 +3,6 @@ I am not allowed to publish the purpose of this project,
 but it's generally a mini full-stack web development project.
 
 ## Run
-I supplied the node modules, so it's not necessary to build from scratch. just run:
 ```
 node app.js
 ```
