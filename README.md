@@ -2,6 +2,25 @@
 I am not allowed to publish the purpose of this project,
 but it's in general a mini full-stack web development project.
 
+## Run
+I supplied the node modules, so it's not necessary to run the commands. just run:
+```
+node app.js
+```
+and open index.html
+
+## Build from scratch:
+```
+npm install express
+npm install cors
+npm install mongoose
+npm install faker
+
+node create_db.js
+node app.js
+
+open index.html
+```
 # Included topics:
 
 ## Technologies and labs:
@@ -30,24 +49,4 @@ npm
 mocha
 chi
 source-control
-```
-
-## Run
-I supplied the node modules, so it's not necessary to run the commands. just run:
-```
-node app.js
-```
-and open index.html
-
-## Build from scratch:
-```
-npm install express
-npm install cors
-npm install mongoose
-npm install faker
-
-node create_db.js
-node app.js
-
-open index.html
 ```
