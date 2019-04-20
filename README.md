@@ -6,7 +6,7 @@ but it's generally a mini full-stack web development project.
 ```
 node app.js
 ```
-and open index.html
+and open index.html and press ctrl+f5 (refresh) if necessary.
 
 ## Build from scratch:
 ```
