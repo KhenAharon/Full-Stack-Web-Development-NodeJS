@@ -1,6 +1,6 @@
 # Full-Stack web development
 I am not allowed to publish the purpose of this project,
-but it's in general a mini full-stack web development project.
+but it's generally a mini full-stack web development project.
 
 ## Run
 I supplied the node modules, so it's not necessary to run the commands. just run:
