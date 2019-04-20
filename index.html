@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/footer-basic-centered.css">
+	<title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 500px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #FFC0CB;
+    color: white;
+    transition: all 0.3s;
+    overflow-y: scroll;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+<body >
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Bootstrap Sidebar</h3>
+        </div>
+        <ul class="list-unstyled components" id="users_id">
+            <p>Sidebar</p>
+        </ul>
+    </nav>
+  </div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        
+        <a class="navbar-brand xs-h sm-h" href="#">Khen Aharon</a> <!-- xs-h means xs-hide -->
+        <a class="navbar-brand md-h lg-h" href="#">Khen Aharon</a></div>
+        
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="defaultNavbar1">
+        <ul class="nav navbar-nav">
+          <li class="active"> <a href ="javascript: newLocation(-25.8186585,140.3894846);">Australia<span class="sr-only">(current)</span></a></li>
+          <li class="active"> <a href ="javascript:newLocation(31.3867086,37.3257094)">Israel<span class="sr-only">(current)</span></a></li>
+          <li class="active"> <a href ="javascript:newLocation(36.2104063,-77.6063929)">USA<span class="sr-only">(current)</span></a></li>
+          <li class="active"> <a href ="javascript:newLocation(46.1313542,6.5399077)">France<span class="sr-only">(current)</span></a></li>
+          <li class="active"> <a href ="javascript:newLocation(36.497073,139.0915883)">Japan<span class="sr-only">(current)</span></a></li>
+
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+		    <div id="map"></div>
+    
+
+	 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXvdByHYIUrNGQ9KyHjLAmc9lDePopXuU&callback=initMap"
+    async defer></script>
+
+
+    <script>
+    	function newLocation(newLat,newLng)
+		{
+			map.setCenter({
+			  lat : newLat,
+			  lng : newLng
+			});
+		}
+	  	var rad = function(x) {
+		  return x * Math.PI / 180;
+		};
+
+		var getDistance = function(p1_lat, p1_lng, p2_lat, p2_lng) {
+		  var R = 6378137; // Earth’s mean radius in meter
+		  var dLat = rad(p2_lat - p1_lat);
+		  var dLong = rad(p2_lng - p1_lng);
+		  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+		    Math.cos(rad(p1_lat)) * Math.cos(rad(p2_lat)) *
+		    Math.sin(dLong / 2) * Math.sin(dLong / 2);
+		  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		  var d = R * c;
+		  return d; // returns the distance in meter
+		};
+
+      var longitudes, latitudes, names;
+      var locations = [];
+
+      $.ajax({
+        url: 'http:localhost:3000',
+        method: 'GET',
+        success: function(data, state, res){
+          if(data){
+          	longitudes = data.longitudes;
+          	latitudes = data.latitudes;
+          	names = data.names;
+          }else{
+            console.log('STATUS CODE: ' + res);
+          }
+        },
+        complete: function() {
+			//center: {lat: -34.397, lng: 150.644},
+			var everyone = []; // {name, lng, lat, distance from center} array.
+
+	        for(var i=0;i<names.length;i++){
+				everyone.push({name: names[i], lng: longitudes[i], lat: latitudes[i], dis: getDistance(latitudes[i], longitudes[i], -34.397, 150,644)});
+		    }
+		    everyone.sort(function(a,b){
+		    	return a.dis-b.dis;
+		    });
+		    console.log(everyone);
+	        for(var i=0;i<everyone.length;i++){
+		    	var node = document.createElement("li");
+				var textnode = document.createTextNode(everyone[i].name + " {" + everyone[i].lat + ", " + everyone[i].lng + "}"+ ", distance from center: " + everyone[i].dis);
+				node.appendChild(textnode);
+				document.getElementById("users_id").appendChild(node);
+			}
+        },
+        error: function(data, state){
+          console.log("SOP restriction");
+        }
+      });
+
+      var map;
+      function initMap() {
+      	setTimeout(function(){ //be sure ajax finished. google api doesnt allow insert initMap into ajax complete scope.
+      	  map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+        for(var i = 0; i < longitudes.length; i++) {
+        	var uluru = {lat: parseInt(latitudes[i]), lng: parseInt(longitudes[i])};
+  			//new google.maps.Marker({position: uluru, map: map});
+  			locations.push(uluru);
+        }
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+        var markerCluster = new MarkerClusterer(map, markers,
+        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+		}, 1200);
+      }
+    </script>
+  <script src="js/bootstrap.js"></script>
+</body>
+</html>

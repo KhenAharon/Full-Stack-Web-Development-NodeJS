@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous"></script>
+
+    <script>
+      $.ajax({
+        url: 'http:localhost:3000',
+        method: 'GET',
+        success: function(data, state, res){
+          if(data){
+            console.log(data.text);
+          }else{
+            console.log('STATUS CODE: ' + res.status);
+          }
+        },
+        error: function(data, state){
+          console.log("SOP restriction");
+        }
+      });
+    </script>
+  </body>
+</html>

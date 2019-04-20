@@ -1,0 +1,272 @@
+@charset "utf-8";
+.navbar-default {
+  background-color: #dfa19b;
+  border-color: #d76b61;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #dfa19b;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  background-color: #d76b61;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #d76b61;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  background-color: #d76b61;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #d76b61;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #d76b61;
+}
+.navbar-default .navbar-toggle {
+  border-color: #d76b61;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #d76b61;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+.navbar-brand {
+}
+
+
+.img-inside {
+	max-height: 20em;
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 10px;
+	display: block;
+	margin-top: 50px;
+
+}
+#banner {
+	margin: auto auto;
+	max-height: 22em;
+}
+.nav {
+
+
+}
+.navbar {
+	margin-bottom: 5px;
+}
+body {
+	background-color: #FFF8E7;
+	margin-top: 50px;
+
+}
+#navbar_other_languages {
+	margin-right: 0px;
+
+
+}
+#navbar_hebrew_icon_img {
+	height: 20px;
+
+}
+#navbar_russian_icon_img {
+	height: 20px;
+}
+#navbar_english_icon_img {
+	height: 17px;
+}
+.green_text {
+	color: #46973D;
+}
+#alex_picture {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.photo_wide {
+	width: 400px;
+}
+
+
+
+
+@media (max-width:649px){
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #d76b61;
+  }
+  #alex_picture {
+	border-radius: 20px;
+	width: 200px;
+  }
+.xs-h {
+	display: none;
+}
+.vid {
+	width : 280px;
+	height : 157px;
+}
+.homepage {
+	font-family: "Times New Roman";
+	font-style: italic;
+	/*font-size: 2em;*/
+	display: block;
+    font-size: 2em;
+    margin-bottom: 1em;
+	margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+}
+.float_right{
+	float:right;
+}
+#about_myself {
+	color: #1A5F1A;
+	text-align: center;
+}
+#Soloviev_Alex {
+	color: #3B8338;
+	text-align: center;
+}
+#sincerely_alex {
+	color: #3B8338;
+	text-align: center;
+}
+
+@media (min-width:650px) and (max-width:959px){
+#alex_picture {
+	border-radius: 20px;
+	width: 437px;
+}
+
+.sm-h {
+	display: none;
+}
+.vid {
+	width : 600px;
+	height : 338px;
+}
+.homepage {
+	font-family: "Times New Roman";
+	font-style: italic;
+	/*font-size: 2.4em;*/
+	display: block;
+    font-size: 2.4em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+}
+}
+
+@media (min-width:960px) and (max-width:1199px){
+#alex_picture {
+	border-radius: 20px;
+	width: 533px;
+}
+.md-h {
+	display: none;
+}
+.vid {
+	width : 640px;
+	height : 360px;
+}
+.homepage {
+	font-family: "Times New Roman";
+	font-style: italic;
+	display: block;
+    font-size: 2.7em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+}
+}
+
+@media (min-width:1200px){
+	.lg-h {
+		display: none;
+	}
+	.vid {
+		width : 720px;
+		height : 405px;
+	}
+	#alex_picture {
+		border-radius: 20px;
+		width: 533px;
+	}
+	.homepage {
+		font-family: "Times New Roman";
+		font-style: italic;
+		display: block;
+		font-size: 2.7em;
+		margin-top: 0.67em;
+		margin-bottom: 0.67em;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+#photo_floating_ice {
+	width: 400px;
+}
+
+a.whitelink , a.whitelink :hover, a.whitelink :active, a.whitelink :visited {
+	color: white;
+}
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
