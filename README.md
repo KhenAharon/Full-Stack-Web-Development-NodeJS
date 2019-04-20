@@ -2,7 +2,7 @@
 I am not allowed to publish the purpose of this project,
 but it's in general a mini full-stack web development project.
 
-# These are the topics that this project includes:
+# Included topics:
 
 ## Technologies and labs:
 ```
