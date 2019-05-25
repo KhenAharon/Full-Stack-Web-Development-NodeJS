@@ -1,6 +1,4 @@
 # Full-Stack web development
-I am not allowed to publish the purpose of this project,
-but it's generally a mini full-stack web development project.
 
 ## Run
 ```
